@@ -36,7 +36,14 @@ def initial(root):
     e4.pack(pady=10)
 
     b1=ct.CTkButton(root, text="Generate", command=lambda:command(e1, e2, e3, e4))
-    b1.pack()
+    b1.pack(pady=10)
+
+    t1=ct.CTkTextbox(root)
+    t1.pack(pady=30)
+
+    
+    b1=ct.CTkButton(root, text="Copy to clipboard", command=lambda:print(1))
+    b1.pack(pady=10)
 
 
     print(1)
