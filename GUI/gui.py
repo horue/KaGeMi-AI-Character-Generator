@@ -6,19 +6,19 @@ genai.configure(api_key=key)
 model = genai.GenerativeModel('gemini-pro')
 
 
-def g(prompt):
+def g(prompt, t1):
   final=model.generate_content(prompt)
   print(final.text)
+  t1.insert(ct.END, text=final.text)
 
-
-def command(e1, e2, e3, e4):
+def command(e1, e2, e3, e4, t1):
     nome=e1.get()
     idade=e2.get()
     personalidade=e3.get()
     história=e4.get()
 
     prompt=(f'Create a character the best well write you can, this character is named {nome}, is {idade} have the {personalidade} personality. Write a background story that is {história}')
-    g(prompt)
+    g(prompt, t1)
 
 
 
@@ -35,7 +35,7 @@ def initial(root):
     e4=ct.CTkEntry(root, placeholder_text="Background")
     e4.pack(pady=10)
 
-    b1=ct.CTkButton(root, text="Generate", command=lambda:command(e1, e2, e3, e4))
+    b1=ct.CTkButton(root, text="Generate", command=lambda:command(e1, e2, e3, e4, t1))
     b1.pack(pady=10)
 
     t1=ct.CTkTextbox(root)
