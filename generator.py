@@ -12,9 +12,9 @@ def g(comando):
 
 
 def perguntas():
-    nome=input('Entre o nome do personagem ')
+    nome=input('Entre o nome do personagem: ')
     idade=input('Entre a idade do personagem: ')
-    personalidade=input('Entre a personalidad do personagem: ')
+    personalidade=input('Entre a personalidade do personagem: ')
     história=('Entre o tipo de história de fundo seu personagem terá: ')
 
 
