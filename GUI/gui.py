@@ -12,13 +12,14 @@ def g(prompt, t1):
   print(final.text)
   t1.insert(ct.END, text=final.text)
 
-def command(e1, e2, e3, e4, t1):
+def command(e1, e2, e3, e4, e5, t1):
     nome=e1.get()
     idade=e2.get()
     personalidade=e3.get()
     história=e4.get()
+    dl=e5.get()
 
-    prompt=(f'Create a character the best well write you can, this character is named {nome}, is {idade} have the {personalidade} personality. Write a background story that is {história}')
+    prompt=(f'Create a character the best well write you can, this character is named {nome}, is {idade} have the {personalidade} personality. Write a background story that is {história}. The story must written be in {dl}')
     g(prompt, t1)
 
 
@@ -36,11 +37,14 @@ def initial(root):
     e4=ct.CTkEntry(root, placeholder_text="Background")
     e4.pack(pady=10)
 
-    b1=ct.CTkButton(root, text="Generate", command=lambda:command(e1, e2, e3, e4, t1))
+    e5=ct.CTkEntry(root, placeholder_text="Desired Leanguage")
+    e5.pack(pady=10)
+
+    b1=ct.CTkButton(root, text="Generate", command=lambda:command(e1, e2, e3, e4, e5, t1))
     b1.pack(pady=10)
 
     t1=ct.CTkTextbox(root, height=290, width=520)
-    t1.pack(pady=30)
+    t1.pack(pady=25)
 
     
     b1=ct.CTkButton(root, text="Copy to clipboard", command=lambda:pyperclip.copy(t1.get(1.0, ct.END)))
