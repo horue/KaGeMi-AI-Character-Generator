@@ -27,6 +27,9 @@ def command(e1, e2, e3, e4, e5, t1):
 
 
 def initial(root):
+    l1=ct.CTkLabel(root, text="KaGeMi - AI Character Generator")
+    l1.pack(pady=5)
+
     e1=ct.CTkEntry(root, placeholder_text="Character name")
     e1.pack(pady=10)
 
@@ -46,7 +49,7 @@ def initial(root):
     b1.pack(pady=10)
 
     t1=ct.CTkTextbox(root, height=290, width=520)
-    t1.pack(pady=25)
+    t1.pack(pady=15)
 
     
     b1=ct.CTkButton(root, text="Copy to clipboard", command=lambda:pyperclip.copy(t1.get(1.0, ct.END)))
@@ -59,7 +62,7 @@ def initial(root):
 def main():
     root = ct.CTk()
     root.geometry("650x700")
-    root.title("KaGeMi - Gemini Powered Character Generator")
+    root.title("KaGeMi - AI Character Generator")
 
     initial(root)
     
