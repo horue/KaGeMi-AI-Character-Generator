@@ -39,7 +39,7 @@ def initial(root):
     b1=ct.CTkButton(root, text="Generate", command=lambda:command(e1, e2, e3, e4, t1))
     b1.pack(pady=10)
 
-    t1=ct.CTkTextbox(root)
+    t1=ct.CTkTextbox(root, height=250, width=400)
     t1.pack(pady=30)
 
     
@@ -52,8 +52,8 @@ def initial(root):
 
 def main():
     root = ct.CTk()
-    root.geometry("600x590")
-    root.title("Character Generator")
+    root.geometry("650x610")
+    root.title("KaGeMi - Gemini Powered Character Generator")
 
     initial(root)
     
