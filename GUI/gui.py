@@ -8,9 +8,13 @@ model = genai.GenerativeModel('gemini-pro')
 
 
 def g(prompt, t1):
-  final=model.generate_content(prompt)
-  print(final.text)
-  t1.insert(ct.END, text=final.text)
+    final=model.generate_content(prompt)
+    print(final.text)
+    try:
+        t1.delete('1.0', 'end')
+        t1.insert(ct.END, text=final.text)
+    except:
+        t1.insert(ct.END, text=final.text)
 
 def command(e1, e2, e3, e4, e5, t1):
     nome=e1.get()
