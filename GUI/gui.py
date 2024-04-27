@@ -1,6 +1,7 @@
 import customtkinter as ct
 import google.generativeai as genai
 from key import key 
+import pyperclip
 
 genai.configure(api_key=key)
 model = genai.GenerativeModel('gemini-pro')
@@ -42,7 +43,7 @@ def initial(root):
     t1.pack(pady=30)
 
     
-    b1=ct.CTkButton(root, text="Copy to clipboard", command=lambda:print(1))
+    b1=ct.CTkButton(root, text="Copy to clipboard", command=lambda:pyperclip.copy(t1.get(1.0, ct.END)))
     b1.pack(pady=10)
 
 
