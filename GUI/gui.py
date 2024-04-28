@@ -24,8 +24,7 @@ def command(e1, e2, e3, e4, e5, t1):
     dl=e5.get()
     if dl == "":
         dl = "English"
-
-    prompt=(f'Create a character the best well write you can, this character is named {nome}, is {idade} have the {personalidade} personality. Write a background story that is {história}. The story must written be in {dl}')
+    prompt=(f'Create a character the best well write you can, this character is named {nome}, is {idade} years old, have the {personalidade} personality. Write a background story that is {história}. The story must written be in {dl}')
     g(prompt, t1)
 
 
