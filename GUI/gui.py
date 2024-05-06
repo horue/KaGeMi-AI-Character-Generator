@@ -58,10 +58,6 @@ def initial(root):
     b1=ct.CTkButton(root, text="Copy to clipboard", command=lambda:pyperclip.copy(t1.get(1.0, ct.END)))
     b1.pack(pady=10)
 
-
-    print(1)
-
-
 def main():
     root = ct.CTk()
     root.geometry("650x700")
