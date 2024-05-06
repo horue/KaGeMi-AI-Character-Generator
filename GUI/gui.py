@@ -62,6 +62,7 @@ def main():
     root = ct.CTk()
     root.geometry("650x700")
     root.title("KaGeMi - AI Character Generator")
+    root.after(1, lambda :root.iconbitmap('Visual\KaGeMi-Icon_3.ico'))
 
     initial(root)
     
