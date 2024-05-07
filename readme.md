@@ -31,4 +31,5 @@ This Python script utilizes Gemini's API to create unique and captivating charac
 	-   This project leverages Gemini's API for character generation.
 
 6. License
+
 	This project is licensed under the MIT License - see the LICENSE file for details.
