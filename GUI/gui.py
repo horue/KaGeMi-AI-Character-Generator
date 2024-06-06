@@ -27,6 +27,14 @@ def command(e1, e2, e3, e4, e5, t1):
     prompt=(f'Create a character the best well write you can, this character is named {nome}, is {idade} years old, have the {personalidade} personality. Write a background story that is {história}. The story must written be in {dl}')
     g(prompt, t1)
 
+def save(e1, e2, e3, e4, e5, t1):
+    if e1.get() == '':
+        f = open(f"newfile.txt", "w")
+        f.write("Woops! I have deleted the content!")
+    else:
+        f = open(f"{e1.get()}.txt", "w")
+        f.write(t1.get(1.0, ct.END))
+
 
 
 def initial(root):
@@ -58,11 +66,14 @@ def initial(root):
     b1=ct.CTkButton(root, text="Copy to clipboard", command=lambda:pyperclip.copy(t1.get(1.0, ct.END)))
     b1.pack(pady=10)
 
+    b2=ct.CTkButton(root, text="Save as TXT", command=lambda:save(e1, e2, e3, e4, e5, t1))
+    b2.pack()
+
 def main():
     root = ct.CTk()
     root.geometry("650x700")
     root.title("KaGeMi - AI Character Generator")
-    root.after(1, lambda :root.iconbitmap('Visual\KaGeMi-Icon_3.ico'))
+    root.after(1, lambda :root.iconbitmap(r'Visual\KaGeMi-Icon_3.ico'))
 
     initial(root)
     
