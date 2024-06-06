@@ -30,7 +30,10 @@ def command(e1, e2, e3, e4, e5, t1):
 def save(e1, e2, e3, e4, e5, t1):
     if e1.get() == '':
         f = open(f"newfile.txt", "w")
-        f.write("Woops! I have deleted the content!")
+        if t1.get(1.0, ct.END) == '':
+            f.write("Woops! You forgot to click the Generate Button!")
+        else:
+            f.write(t1.get(1.0, ct.END))
     else:
         f = open(f"{e1.get()}.txt", "w")
         f.write(t1.get(1.0, ct.END))
